@@ -1,4 +1,4 @@
-package com.huynn109.template.data.entity.res
+package com.huynn109.template.data.model.res
 
 import com.google.gson.annotations.SerializedName
 

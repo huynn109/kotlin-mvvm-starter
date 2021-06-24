@@ -2,7 +2,7 @@ package com.huynn109.template.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.huynn109.template.data.entity.res.BaseRes
+import com.huynn109.template.data.model.res.BaseRes
 import com.huynn109.template.util.Event
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

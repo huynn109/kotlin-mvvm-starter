@@ -1,8 +1,8 @@
 package com.huynn109.template.data.network.remote
 
-import com.huynn109.template.data.entity.req.LoginReq
-import com.huynn109.template.data.entity.res.BaseRes
-import com.huynn109.template.data.entity.res.LoginRes
+import com.huynn109.template.data.model.req.LoginReq
+import com.huynn109.template.data.model.res.BaseRes
+import com.huynn109.template.data.model.res.LoginRes
 import com.huynn109.template.data.network.DataSource
 import io.reactivex.Scheduler
 import io.reactivex.Single
