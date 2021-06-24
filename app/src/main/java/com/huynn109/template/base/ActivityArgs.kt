@@ -11,5 +11,6 @@ import android.content.Intent
 interface ActivityArgs {
     fun intent(activity: Context): Intent
     fun launch(activity: Context) = activity.startActivity(intent(activity))
-    fun launch(activity: Activity, requestCode: Int) = activity.startActivityForResult(intent(activity), requestCode)
+    fun launch(activity: Activity, requestCode: Int) =
+        activity.startActivityForResult(intent(activity), requestCode)
 }

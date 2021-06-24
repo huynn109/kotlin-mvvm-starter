@@ -7,5 +7,4 @@ import io.reactivex.Scheduler
 /**
  * Created by huynn109 on 2019-07-02.
  */
-class LoginViewModel(private val accountUseCase: AccountUseCase, private val scheduler: Scheduler): BaseViewModel() {
-}
+class LoginViewModel(private val accountUseCase: AccountUseCase, private val scheduler: Scheduler): BaseViewModel()

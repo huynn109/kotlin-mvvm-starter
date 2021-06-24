@@ -8,4 +8,4 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by huynn109 on 2019-07-01.
  */
-class MainViewModel(private val newsUseCase: NewsUseCase, private val scheduler: Scheduler) : BaseViewModel(){}
+class MainViewModel(private val newsUseCase: NewsUseCase, private val scheduler: Scheduler) : BaseViewModel()

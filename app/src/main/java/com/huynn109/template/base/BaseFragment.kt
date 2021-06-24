@@ -11,14 +11,18 @@ import com.huynn109.template.util.ext.inflateLayout
  * Created by huynn109 on 4/8/19.
  */
 
-abstract class BaseFragment: Fragment(){
+abstract class BaseFragment : Fragment() {
 
-  abstract fun layoutId(): Int
+    abstract fun layoutId(): Int
 
-  override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-    context?.inflateLayout(layoutId(),container,false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
+        context?.inflateLayout(layoutId(), container, false)
 
-  open fun onBackPressed() {}
+    open fun onBackPressed() {}
 
-  internal fun firstTimeCreated(savedInstanceState: Bundle?) = savedInstanceState == null
+    internal fun firstTimeCreated(savedInstanceState: Bundle?) = savedInstanceState == null
 }
