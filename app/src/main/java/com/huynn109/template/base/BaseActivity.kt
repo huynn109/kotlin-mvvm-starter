@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModel
 import com.huynn109.template.R
-import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.android.viewmodel.ext.android.getViewModel
 import java.lang.reflect.ParameterizedType
 import kotlin.reflect.KClass
 
@@ -39,8 +39,8 @@ abstract class BaseActivity<out M : ViewModel> : AppCompatActivity() {
         initUIComponent()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true

@@ -21,7 +21,7 @@ val networkModule = module {
     single { createSharePreferenceHelper(get()) }
     single { createInterceptor(get()) }
     single { createOkHttpClient(androidContext(), get()) }
-    single { createNetworkClient(get(), BuildConfig.BASE_URL) } // Setting api config build Type
+    single { createNetworkClient(get(), BuildConfig.baseUrl) } // Setting api config build Type
 
 }
 
