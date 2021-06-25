@@ -1,6 +1,6 @@
 package com.huynn109.template.di
 
-import com.huynn109.template.domain.*
+import com.huynn109.template.domain.usecases.*
 import org.koin.dsl.module
 
 

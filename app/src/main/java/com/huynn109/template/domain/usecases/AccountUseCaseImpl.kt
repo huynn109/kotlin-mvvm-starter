@@ -1,9 +1,9 @@
-package com.huynn109.template.domain
+package com.huynn109.template.domain.usecases
 
 import com.huynn109.template.data.model.req.LoginReq
 import com.huynn109.template.data.model.res.BaseRes
 import com.huynn109.template.data.model.res.LoginRes
-import com.huynn109.template.data.network.ApiRepository
+import com.huynn109.template.data.source.network.ApiRepository
 import io.reactivex.Single
 
 /**

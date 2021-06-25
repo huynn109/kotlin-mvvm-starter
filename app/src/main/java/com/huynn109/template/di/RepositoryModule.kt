@@ -1,7 +1,6 @@
 package com.huynn109.template.di
 
-import com.huynn109.template.data.network.ApiRepository
-import io.reactivex.schedulers.Schedulers
+import com.huynn109.template.data.source.network.ApiRepository
 import org.koin.dsl.module
 
 

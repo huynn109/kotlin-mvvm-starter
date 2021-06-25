@@ -1,4 +1,4 @@
-package com.huynn109.template.data.local
+package com.huynn109.template.data.source.local
 
 import android.content.Context
 import com.huynn109.template.config.AUTH_DATA_HEADER_NAME

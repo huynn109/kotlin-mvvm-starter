@@ -1,7 +1,7 @@
 package com.huynn109.template.ui.login
 
 import com.huynn109.template.base.BaseViewModel
-import com.huynn109.template.domain.AccountUseCase
+import com.huynn109.template.domain.usecases.AccountUseCase
 import io.reactivex.Scheduler
 
 /**

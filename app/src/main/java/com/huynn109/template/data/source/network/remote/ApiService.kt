@@ -1,4 +1,4 @@
-package com.huynn109.template.data.network.remote
+package com.huynn109.template.data.source.network.remote
 
 import com.huynn109.template.data.model.req.LoginReq
 import com.huynn109.template.data.model.res.BaseRes
