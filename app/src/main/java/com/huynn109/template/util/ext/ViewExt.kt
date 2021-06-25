@@ -13,15 +13,11 @@ import android.view.animation.Interpolator
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
-
-private val duration = 750L
-private inline val interpolator: Interpolator
-    get() = AccelerateDecelerateInterpolator()
+import com.huynn109.template.util.SafeOnClick
 
 fun View.setPaddingLeft(value: Int) = setPadding(value, paddingTop, paddingRight, paddingBottom)
 
 fun View.setPaddingRight(value: Int) = setPadding(paddingLeft, paddingTop, value, paddingBottom)
-
 
 fun View.setHeight(value: Int) {
     val lp = layoutParams
@@ -69,12 +65,6 @@ fun TextView.bold(isBold: Boolean = true) {
     paint.isFakeBoldText = isBold
     paint.isAntiAlias = true
 }
-
-@Suppress("UNCHECKED_CAST")
-fun <T : View> T.click(block: (T) -> Unit) = setOnClickListener { block(it as T) }
-
-@Suppress("UNCHECKED_CAST")
-fun <T : View> T.longClick(block: (T) -> Boolean) = setOnLongClickListener { block(it as T) }
 
 fun View.visiable() {
     if (visibility != View.VISIBLE) {
@@ -126,8 +116,62 @@ fun View.getBitmap(): Bitmap {
 
 fun EditText.uppercase() {
     transformationMethod = object : ReplacementTransformationMethod() {
-        private val lower = charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
-        private val upper = charArrayOf('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
+        private val lower = charArrayOf(
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+            'i',
+            'j',
+            'k',
+            'l',
+            'm',
+            'n',
+            'o',
+            'p',
+            'q',
+            'r',
+            's',
+            't',
+            'u',
+            'v',
+            'w',
+            'x',
+            'y',
+            'z'
+        )
+        private val upper = charArrayOf(
+            'A',
+            'B',
+            'C',
+            'D',
+            'E',
+            'F',
+            'G',
+            'H',
+            'I',
+            'J',
+            'K',
+            'L',
+            'M',
+            'N',
+            'O',
+            'P',
+            'Q',
+            'R',
+            'S',
+            'T',
+            'U',
+            'V',
+            'W',
+            'X',
+            'Y',
+            'Z'
+        )
 
         override fun getOriginal() = lower
 
@@ -137,8 +181,62 @@ fun EditText.uppercase() {
 
 fun EditText.lowercase() {
     transformationMethod = object : ReplacementTransformationMethod() {
-        private val lower = charArrayOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
-        private val upper = charArrayOf('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
+        private val lower = charArrayOf(
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+            'i',
+            'j',
+            'k',
+            'l',
+            'm',
+            'n',
+            'o',
+            'p',
+            'q',
+            'r',
+            's',
+            't',
+            'u',
+            'v',
+            'w',
+            'x',
+            'y',
+            'z'
+        )
+        private val upper = charArrayOf(
+            'A',
+            'B',
+            'C',
+            'D',
+            'E',
+            'F',
+            'G',
+            'H',
+            'I',
+            'J',
+            'K',
+            'L',
+            'M',
+            'N',
+            'O',
+            'P',
+            'Q',
+            'R',
+            'S',
+            'T',
+            'U',
+            'V',
+            'W',
+            'X',
+            'Y',
+            'Z'
+        )
 
         override fun getOriginal() = upper
 
@@ -148,7 +246,8 @@ fun EditText.lowercase() {
 
 fun EditText.passwordToggledVisible() {
     val selection = selectionStart
-    transformationMethod = if (transformationMethod == null) PasswordTransformationMethod() else null
+    transformationMethod =
+        if (transformationMethod == null) PasswordTransformationMethod() else null
     setSelection(selection)
 }
 
@@ -173,8 +272,14 @@ fun View.showKeyboard() {
  */
 fun View.hideKeyboard(): Boolean {
     try {
-        val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         return inputMethodManager.hideSoftInputFromWindow(windowToken, 0)
-    } catch (ignored: RuntimeException) { }
+    } catch (ignored: RuntimeException) {
+    }
     return false
 }
+
+@Suppress("UNCHECKED_CAST")
+fun View.onSafeClick(interval: Long = 1000, block: (View) -> Unit) =
+    setOnClickListener(SafeOnClick(interval = interval, doClick = block))

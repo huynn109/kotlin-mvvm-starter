@@ -4,10 +4,10 @@ package com.huynn109.template.util
  * Created by huynn109 on 2019-07-01.
  */
 
-open class Event<out T>(private val content: T) {
+class Event<out T>(private val content: T) {
 
     var hasBeenHandled = false
-        private set // Allow external read but not write
+        private set
 
     /**
      * Returns the content and prevents its use again.
@@ -26,3 +26,4 @@ open class Event<out T>(private val content: T) {
      */
     fun peekContent(): T = content
 }
+

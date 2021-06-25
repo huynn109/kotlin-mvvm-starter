@@ -2,10 +2,13 @@ package com.huynn109.template.base
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBinding
 import com.huynn109.template.R
+import com.huynn109.template.databinding.ActivityLoginBinding
 import org.koin.android.viewmodel.ext.android.getViewModel
 import java.lang.reflect.ParameterizedType
 import kotlin.reflect.KClass
@@ -26,7 +29,7 @@ abstract class BaseActivity<out M : ViewModel> : AppCompatActivity() {
         return type as KClass<M>
     }
 
-    abstract val layoutResId: Int
+    abstract val contentViewBinding: View
 
     abstract fun observerViewModel()
 
@@ -34,7 +37,7 @@ abstract class BaseActivity<out M : ViewModel> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layoutResId)
+        setContentView(contentViewBinding)
         observerViewModel()
         initUIComponent()
     }
