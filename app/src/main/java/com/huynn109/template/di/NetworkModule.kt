@@ -5,7 +5,7 @@ import com.huynn109.template.BuildConfig
 import com.huynn109.template.config.AUTH_DATA_HEADER_NAME
 import com.huynn109.template.config.RESPONSE_CACHE_PATH_NAME
 import com.huynn109.template.config.RESPONSE_CACHE_SIZE
-import com.huynn109.template.data.local.SharePreferenceHelper
+import com.huynn109.template.data.source.local.SharePreferenceHelper
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

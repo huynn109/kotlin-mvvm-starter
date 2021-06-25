@@ -1,9 +1,7 @@
 package com.huynn109.template.di
 
 
-import com.huynn109.template.data.network.remote.ApiService
-import okhttp3.Interceptor
-import okhttp3.logging.HttpLoggingInterceptor
+import com.huynn109.template.data.source.network.remote.ApiService
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
